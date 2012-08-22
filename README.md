@@ -16,6 +16,14 @@ Most notably, this means support for setting up an HTTP proxy that can be used t
 For now, this project is the metaphorical "tip of the iceberg".  I'm integrating [Zombie.js](http://zombie.labnotes.org/), wrapping both that and Selenium under one roof, throwing in a configurable proxy for storing traces of the server->client traffic, replaying said traces, etc. This is the first piece of that puzzle.
 
 
+### Installing
+
+    npm install selenium-inproc
+
+During install, npm will trigger the Makefile to download selenium-server-standalone-2.25.0.jar (it's ~31M).
+Once this finishes, you should be good to go.
+
+
 # Example
 
 This is [CoffeeScript](http://coffeescript.org/), which is directly convertable to JS, so don't be intimidated if it's a new syntax to you. Same thing, just more terse.
