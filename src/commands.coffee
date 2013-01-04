@@ -58,6 +58,7 @@ module.exports = [
   'getExpression'
   'getHtmlSource'
   'getLocation'
+  'getLog'
   'getLogMessages'
   'getMouseSpeed'
   'getPrompt'
@@ -142,5 +143,6 @@ module.exports = [
   'waitForPopUp'
   'windowFocus'
   'windowMaximize'
+  'captureScreenshot'
   'captureScreenshotToString'
 ]
