@@ -15,5 +15,5 @@
     "install": "make install"
   },
   "author": "Dave Dopson <ddopson@gmail.com>",
-  "license": "Proprietary"
+  "license": "WTFPL"
 }
