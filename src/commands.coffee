@@ -93,6 +93,8 @@ module.exports = [
   'goBack'
   'highlight'
   'ignoreAttributesWithoutValue'
+  'isElementPresent'
+  'isVisible'
   'keyDown'
   'keyPress'
   'keyUp'

@@ -16,23 +16,28 @@ class SeleniumWrapper {
   Selenium selenium;
   DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
   String baseUrl;
+  String proxyUrl;
 
   public SeleniumWrapper(String baseUrl) {
     this.baseUrl = baseUrl;
   }
 
-  public SeleniumWrapper setProxy(String uri) {
+  public SeleniumWrapper setProxy(String url) {
     Proxy proxy = new Proxy();
-    proxy.setSslProxy(uri);
-    proxy.setHttpProxy(uri);
-    proxy.setFtpProxy(uri);
-    desiredCapabilities.setCapability(CapabilityType.PROXY, proxy);
+    proxy.setSslProxy(url);
+    proxy.setHttpProxy(url);
+    //proxy.setFtpProxy(url);
+    this.desiredCapabilities.setCapability(CapabilityType.PROXY, proxy);
+    //System.out.println("Setting Proxy to " + url);
+    this.proxyUrl = url;
     return this;
   }
 
   public Selenium openBrowser() {
-    driver = new FirefoxDriver(desiredCapabilities);
-    selenium = new WebDriverBackedSelenium(driver, this.baseUrl);
-    return selenium;
+    this.driver = new FirefoxDriver(this.desiredCapabilities);
+    //System.out.println("SeleniumWrapper: Proxy is set to " + proxyUrl);
+    //System.out.println("SeleniumWrapper: Base is set to " + baseUrl);
+    this.selenium = new WebDriverBackedSelenium(this.driver, this.baseUrl);
+    return this.selenium;
   }
 }
